@@ -1,0 +1,36 @@
+{{#extends "base"}}
+
+{{#block "content"}}
+
+<form action="/employees/create" method="POST">
+    <div>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" class="form-control" required>
+    </div>
+    <div>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" class="form-control" required>
+    </div>
+    <div>
+        <label for="department_id">Department:</label>
+        <select id="department_id" name="department_id"  class="form-control">
+            {{#each departments}}
+            <option value="{{this.department_id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div>
+        <label for="customer_id">Customers:</label>
+        <select id="customer_id" name="customers" class="form-control" multiple>
+            {{#each customers}}
+                <option value="{{this.customer_id}}">
+                    {{this.first_name}} {{this.last_name}}
+                </option>
+            {{/each}}
+        </select>
+    </div>
+    <button type="submit" class="mt-3 btn btn-primary">Create Employee</button>
+</form>
+
+{{/block}}
+{{/extends}}
