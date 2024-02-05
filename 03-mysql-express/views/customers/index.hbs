@@ -14,10 +14,10 @@
             <tbody>
                 {{#each customers}}
                 <tr>
-                    <td>{{this.first_name}}</td>
-                    <td>{{this.last_name}}</td>
-                    <td>{{this.rating}}</td>
-                    <td>{{this.name}}</td>
+                    <td>{{this.Customers.first_name}}</td>
+                    <td>{{this.Customers.last_name}}</td>
+                    <td>{{this.Customers.rating}}</td>
+                    <td>{{this.Companies.name}}</td>
                     <td>
                         <a href="/customers/{{this.customer_id}}/delete" class="btn btn-danger btn-sm">Delete</a>
                         <a href="/customers/{{this.customer_id}}/update" class="btn btn-success btn-sm">Update</a> 
